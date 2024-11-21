@@ -268,7 +268,7 @@ func SPNEGOKRB5Authenticate(inner http.Handler, kt *keytab.Keytab, settings ...f
 			return
 		}
 
-		// Check if there is an Authorization header
+		// Check if there is an Authorization header.
 		st, err := getAuthorizationNegotiationHeaderAsSPNEGOToken(spnego, r, w)
 		if st == nil || err != nil {
 			// response to client and logging handled in function above so just return
